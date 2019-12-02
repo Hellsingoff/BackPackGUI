@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: #eee;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.BGController">
+   <AnchorPane prefHeight="64.0" prefWidth="800.0" style="-fx-background-color: #3f51b5;">
+      <effect>
+         <DropShadow color="GRAY" offsetY="3.0" radius="3.0"/>
+      </effect>
+      <children>
+         <Label layoutX="324.0" layoutY="3.0" text="BackPack!" textFill="WHITE">
+            <font>
+               <Font name="Gabriola" size="48.0"/>
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
+</AnchorPane>
