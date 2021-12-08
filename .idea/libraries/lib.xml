@@ -2,12 +2,14 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$USER_HOME$/.eclipse/lib" />
+      <root url="file://D:/javafx-sdk-17.0.1/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$USER_HOME$/.eclipse/lib" />
     </SOURCES>
     <jarDirectory url="file://$USER_HOME$/.eclipse/lib" recursive="false" />
+    <jarDirectory url="file://D:/javafx-sdk-17.0.1/lib" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/.eclipse/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

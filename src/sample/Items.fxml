@@ -38,9 +38,9 @@
           <Font size="22.0" />
         </font>
     </Button>
-    <Button fx:id="removeItem" disable="true" layoutX="287.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="➖" wrapText="true">
+    <Button fx:id="removeItem" disable="true" layoutX="287.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="🗑" wrapText="true">
         <font>
-          <Font size="35.0" />
+          <Font size="32" />
         </font>
     </Button>
     <Button fx:id="calculate" disable="true" layoutX="730.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onMouseClicked="#calculate" prefHeight="50.0" prefWidth="50.0" text="➔" wrapText="true">

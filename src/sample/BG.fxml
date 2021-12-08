@@ -12,12 +12,10 @@
       <effect>
          <DropShadow color="GRAY" offsetY="3.0" radius="3.0"/>
       </effect>
-      <children>
-         <Label layoutX="324.0" layoutY="3.0" text="BackPack!" textFill="WHITE">
-            <font>
-               <Font name="Gabriola" size="48.0"/>
-            </font>
-         </Label>
-      </children>
+      <Label layoutX="324.0" layoutY="3.0" text="BackPack!" textFill="WHITE">
+         <font>
+            <Font name="Gabriola" size="48.0"/>
+         </font>
+      </Label>
    </AnchorPane>
 </AnchorPane>

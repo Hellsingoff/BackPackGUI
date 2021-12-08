@@ -1,30 +1,25 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
+import javafx.scene.control.CheckBox;
 import javafx.scene.input.MouseEvent;
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class StartController {
-    @FXML private Slider sliderSize;
-    @FXML private Label labelSize;
-    private double size = 50;
+    @FXML private CheckBox checkGreed;
+    private boolean greed = false;
 
-    public double getSize() {
-        return size;
+    public boolean isGreed() {
+        return greed;
     }
 
     @FXML
     private void initialize() {
-        labelSize.setText(String.valueOf(size));
-        sliderSize.setValue(size);
-        sliderSize.valueProperty().addListener((observable, oldValue, newValue) -> {
-            labelSize.setText(Double.toString(newValue.intValue()));
-        });
+        checkGreed.setSelected(greed);
     }
 
     public void wikiClick() throws IOException, URISyntaxException {
@@ -35,7 +30,7 @@ public class StartController {
     }
 
     public void toItems(MouseEvent mouseEvent) {
-        size = sliderSize.getValue();
+        greed = checkGreed.isSelected();
         Main.background.getChildren().set(1, Main.items);
     }
 }

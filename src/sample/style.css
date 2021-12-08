@@ -138,3 +138,19 @@
 .error .text-field {
     -fx-background-color: rgba(255, 0, 0, 0.5);
 }
+
+.check-box .box {
+-fx-cursor: hand;
+-fx-background-color:white;
+-fx-border-color:grey;
+-fx-border-radius:3px;
+}
+
+.check-box:selected .mark {
+-fx-background-color: white;
+}
+
+.check-box:selected .box {
+-fx-background-color: #3f51b5;
+-fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
+}

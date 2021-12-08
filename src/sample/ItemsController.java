@@ -33,7 +33,7 @@ public class ItemsController {
         massEdit.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(!valid.checkNumeric(event.getCharacter()))
+                //if(!valid.checkNumeric(event.getCharacter()))
                     event.consume();
             }});
     }
@@ -43,7 +43,7 @@ public class ItemsController {
     }
 
     public void addItem(MouseEvent mouseEvent) {
-        if (massEdit.getValue() > 0) {
+        if (massEdit.getValue() > 0 && priceEdit.getValue() > 0) {
             itemList.add(new Item(nameEdit.getText(), massEdit.getValue(), priceEdit.getValue()));
             calculate.setDisable(false);
             nameEdit.setText("");
