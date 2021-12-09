@@ -73,19 +73,6 @@
     -fx-background-color: #afc8fc;
 }
 
-.slider {
-    -thumb-color: #4f62c6;
-}
-
-.slider .thumb {
-    -fx-background-color: -thumb-color;
-    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
-}
-
-.slider .track {
-    -fx-background-color: #9fb7fb;
-}
-
 .text-field {
     -fx-background-color: #eee;
     -fx-alignment: CENTER;
@@ -152,5 +139,4 @@
 
 .check-box:selected .box {
 -fx-background-color: #3f51b5;
--fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
 }

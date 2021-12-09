@@ -33,7 +33,7 @@ public class ItemsController {
         massEdit.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                //if(!valid.checkNumeric(event.getCharacter()))
+                if(false)//!valid.checkNumeric(event.getCharacter()))
                     event.consume();
             }});
     }
