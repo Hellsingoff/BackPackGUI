@@ -11,9 +11,9 @@ import java.net.URISyntaxException;
 
 public class StartController {
     @FXML private CheckBox checkGreed;
-    private boolean greed = false;
+    private static boolean greed = false;
 
-    public boolean isGreed() {
+    public static boolean isGreed() {
         return greed;
     }
 

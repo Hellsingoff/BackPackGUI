@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemsController">
-   <Spinner fx:id="massEdit" editable="true" layoutX="355.0" layoutY="71.0" max="100" min="0" prefHeight="40.0" prefWidth="150.0">
+<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemsController">
+   <Spinner fx:id="massEdit" editable="true" layoutX="355.0" layoutY="71.0" max="100" min="0" prefHeight="40.0" prefWidth="145.0">
       <valueFactory>
-         <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" min="1" max="2147483647"/>
+         <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="2147483647" min="0" />
       </valueFactory>
    </Spinner>
     <TableView fx:id="itemTable" layoutX="12.0" layoutY="12.0" prefHeight="400.0" prefWidth="267.0">
@@ -22,12 +22,12 @@
             <Label text="No items!" />
         </placeholder>
         <columns>
-            <TableColumn fx:id="name" editable="false" prefWidth="80.0" resizable="false" sortable="false" text="Name" />
+            <TableColumn fx:id="name" editable="false" maxWidth="80.0" resizable="false" sortable="false" text="Name" />
             <TableColumn fx:id="mass" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Mass" />
             <TableColumn fx:id="price" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Price" />
         </columns>
     </TableView>
-    <Button id="btnBack" layoutX="7.0" layoutY="-57.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="50.0" prefWidth="50.0" text="➔" textAlignment="CENTER">
+    <Button id="btnBack" layoutX="7.0" layoutY="-57.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="50.0" prefWidth="50.0" text="➔" textAlignment="CENTER">
         <font>
             <Font size="33.0" />
         </font>
@@ -40,21 +40,21 @@
       <font>
          <Font size="18.0" />
       </font></Text>
-    <TextField id="nameEdit" fx:id="nameEdit" layoutX="305.0" layoutY="20.0" maxHeight="40.0" maxWidth="400.0" prefHeight="40.0" prefWidth="400.0" promptText="Name">
+    <TextField id="nameEdit" fx:id="nameEdit" layoutX="305.0" layoutY="20.0" prefHeight="40.0" prefWidth="400.0" promptText="Name">
       <font>
          <Font size="18.0" />
       </font></TextField>
-    <Spinner fx:id="priceEdit" editable="true" layoutX="558.0" layoutY="71.0" max="100" min="0" prefHeight="40.0" prefWidth="150.0">
+    <Spinner fx:id="priceEdit" editable="true" layoutX="558.0" layoutY="71.0" prefHeight="40.0" prefWidth="145.0">
         <valueFactory>
-            <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" min="1" max="2147483647"/>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="2147483647" min="0" />
         </valueFactory>
     </Spinner>
-    <Button layoutX="730.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addItem" prefHeight="50.0" prefWidth="50.0" text="➕" textAlignment="CENTER" wrapText="true">
+    <Button layoutX="730.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#addItem" prefHeight="50.0" prefWidth="50.0" text="➕" textAlignment="CENTER" wrapText="true">
         <font>
           <Font size="22.0" />
         </font>
     </Button>
-    <Button fx:id="removeItem" disable="true" layoutX="287.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="🗑" wrapText="true">
+    <Button fx:id="removeItem" disable="true" layoutX="287.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="🗑" wrapText="true">
         <font>
           <Font size="32" />
         </font>
@@ -64,14 +64,14 @@
             <Font size="33.0" />
         </font>
     </Button>
-    <Label layoutX="377.0" layoutY="236.0" text="Размер рюкзака:" textFill="WHITE">
-        <font>
-          <Font size="20.0" />
-        </font>
-    </Label>
-    <Label layoutX="630.0" layoutY="91.0" text=" " textFill="WHITE">
-        <font>
-          <Font size="20.0" />
-        </font>
-    </Label>
+   <Text layoutX="305.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backpack capacity:">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Text>
+   <TextField fx:id="bpSize" layoutX="473.0" layoutY="206.0" prefHeight="40.0" prefWidth="230.0" promptText="Capacity">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </TextField>
 </AnchorPane>

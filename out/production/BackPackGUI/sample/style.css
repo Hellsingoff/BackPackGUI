@@ -84,6 +84,7 @@
     -fx-alignment: CENTER;
     -fx-focus-color: #3f51b5;
     -fx-background-radius: 0;
+    -fx-font-size: 14pt;
 }
 
 .spinner .text-field {
