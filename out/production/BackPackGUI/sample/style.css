@@ -94,11 +94,10 @@
 .spinner:focused,
 .text-field:focused {
     -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
-}
-
-#nameEdit:focused {
     -fx-border-color: #3f51b5;
 }
+
+
 
 .spinner .increment-arrow-button,
 .spinner .decrement-arrow-button {

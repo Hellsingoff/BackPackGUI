@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemsController">
+<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddItemsController">
    <Spinner fx:id="massEdit" editable="true" layoutX="355.0" layoutY="71.0" max="100" min="0" prefHeight="40.0" prefWidth="145.0">
       <valueFactory>
          <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="2147483647" min="0" />
@@ -69,9 +69,9 @@
          <Font size="18.0" />
       </font>
    </Text>
-   <TextField fx:id="bpSize" layoutX="473.0" layoutY="206.0" prefHeight="40.0" prefWidth="230.0" promptText="Capacity">
-      <font>
-         <Font size="18.0" />
-      </font>
-   </TextField>
+    <Spinner fx:id="bpSize" editable="true" layoutX="473.0" layoutY="206.0" prefHeight="40.0" prefWidth="230.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="50" max="2147483647" min="0" />
+        </valueFactory>
+    </Spinner>
 </AnchorPane>

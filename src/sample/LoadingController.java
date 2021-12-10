@@ -18,7 +18,5 @@ public class LoadingController {
         rt.setCycleCount(Animation.INDEFINITE);
         rt.setInterpolator(Interpolator.LINEAR);
         rt.play();
-
-        // тута удалить лишнее, жадность, перебор
     }
 }
