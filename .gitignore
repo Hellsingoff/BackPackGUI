@@ -23,3 +23,6 @@
 hs_err_pid*
 
 .idea/
+.idea/workspace.xml
+.idea/runConfigurations.xml
+.idea/workspace.xml
