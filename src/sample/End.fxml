@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EndController">
-    <Label layoutX="205.0" layoutY="40.0" text="Решение задачи о &quot;неограниченном рюкзаке&quot;.">
+<AnchorPane layoutY="64.0" prefHeight="416.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EndController">
+    <TableView fx:id="itemTable" layoutX="5.0" layoutY="5.0" prefHeight="405.0" prefWidth="380.0">
+        <placeholder>
+            <Label text="No items!" />
+        </placeholder>
+        <columns>
+            <TableColumn fx:id="name" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Name" />
+            <TableColumn fx:id="mass" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Mass" />
+            <TableColumn fx:id="price" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Price" />
+            <TableColumn fx:id="amount" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Amount" />
+        </columns>
+    </TableView>
+    <Button layoutX="730.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="50.0" prefWidth="50.0" text="🗘" textAlignment="CENTER">
         <font>
-            <Font size="18.0" />
-        </font>
-    </Label>
-    <Label layoutX="97.0" layoutY="110.0" text="Предмет может повторяться в рюкзаке неограниченное количество раз.">
-        <font>
-            <Font size="18.0" />
-        </font>
-    </Label>
-    <Label layoutX="57.0" layoutY="180.0" text="Для слишком большого числа предметов предусмотрен более быстрый алгоритм,">
-        <font>
-            <Font size="18.0" />
-        </font>
-    </Label>
-    <Label layoutX="213.0" layoutY="200.0" text="но он не гарантирует оптимальное решение.">
-        <font>
-            <Font size="18.0" />
-        </font>
-    </Label>
-    <Hyperlink layoutX="595.0" layoutY="35.0" onMouseClicked="#wikiClick" style="-fx-text-fill: #3f51b5;" text="Wiki?" underline="true" />
-    <Button layoutX="730.0" layoutY="350.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onMouseClicked="#toItems" prefHeight="50.0" prefWidth="50.0" text="➔" wrapText="true">
-        <font>
-            <Font size="33.0" />
+            <Font size="34.0" />
         </font>
     </Button>
-    <CheckBox fx:id="checkGreed" layoutX="326.0" layoutY="280.0" mnemonicParsing="false" text="Быстрый режим">
-        <font>
-            <Font size="16.0" />
-        </font>
-    </CheckBox>
+   <Label layoutX="415.0" layoutY="30.0" text="Backpack price: ">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label layoutX="415.0" layoutY="120.0" text="Backpack weight: ">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="bpPrice" layoutX="415.0" layoutY="60.0" text="0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="bpWeight" layoutX="415.0" layoutY="150.0" text="0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
 </AnchorPane>

@@ -17,14 +17,14 @@
          <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="2147483647" min="0" />
       </valueFactory>
    </Spinner>
-    <TableView fx:id="itemTable" layoutX="12.0" layoutY="12.0" prefHeight="400.0" prefWidth="267.0">
+    <TableView fx:id="itemTable" layoutX="5.0" layoutY="5.0" prefHeight="405.0" prefWidth="290.0">
         <placeholder>
             <Label text="No items!" />
         </placeholder>
         <columns>
-            <TableColumn fx:id="name" editable="false" maxWidth="80.0" resizable="false" sortable="false" text="Name" />
-            <TableColumn fx:id="mass" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Mass" />
-            <TableColumn fx:id="price" editable="false" prefWidth="85.0" resizable="false" sortable="false" text="Price" />
+            <TableColumn fx:id="name" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Name" />
+            <TableColumn fx:id="mass" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Mass" />
+            <TableColumn fx:id="price" editable="false" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" resizable="false" sortable="false" text="Price" />
         </columns>
     </TableView>
     <Button id="btnBack" layoutX="7.0" layoutY="-57.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="50.0" prefWidth="50.0" text="➔" textAlignment="CENTER">
@@ -54,7 +54,7 @@
           <Font size="22.0" />
         </font>
     </Button>
-    <Button fx:id="removeItem" disable="true" layoutX="287.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="🗑" wrapText="true">
+    <Button fx:id="removeItem" disable="true" layoutX="300.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#removeItem" prefHeight="50.0" prefWidth="50.0" text="🗑" wrapText="true">
         <font>
           <Font size="32" />
         </font>

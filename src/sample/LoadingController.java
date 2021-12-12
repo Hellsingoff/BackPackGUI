@@ -8,12 +8,11 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 public class LoadingController {
-    @FXML
-    private Pane logo;
+    @FXML private Pane logo;
 
     @FXML
     private void initialize() {
-        RotateTransition rt = new RotateTransition(Duration.millis(5000), logo);
+        RotateTransition rt = new RotateTransition(Duration.millis(2400), logo);
         rt.setByAngle(360);
         rt.setCycleCount(Animation.INDEFINITE);
         rt.setInterpolator(Interpolator.LINEAR);

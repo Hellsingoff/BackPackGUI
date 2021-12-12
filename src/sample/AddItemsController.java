@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 
 import java.util.Collections;
 
@@ -17,10 +16,11 @@ public class AddItemsController {
     @FXML private TextField nameEdit;
     @FXML private Spinner<Integer> massEdit, priceEdit, bpSize;
     @FXML private Button removeItem, calculate;
-    private static int size;
-    private static Items result = new Items();
 
+    private static int size;
+    private static final ObservableList<Item> result = FXCollections.observableArrayList();
     private static final ObservableList<Item> itemList = FXCollections.observableArrayList();
+    private static final Items resultItems = new Items();
 
     @FXML
     private void initialize() {
@@ -70,11 +70,11 @@ public class AddItemsController {
         });
     }
 
-    public void back(MouseEvent mouseEvent) {
+    public void back() {
         Main.background.getChildren().set(1, Main.start);
     }
 
-    boolean validValue(String value) {
+    private boolean validValue(String value) {
         try {
             int num = Integer.parseInt(value);
             return num > 0;
@@ -83,7 +83,7 @@ public class AddItemsController {
         }
     }
 
-    public void addItem(MouseEvent mouseEvent) {
+    public void addItem() {
         if (validValue(massEdit.getEditor().getText()) && validValue(priceEdit.getEditor().getText())) {
             itemList.add(new Item(nameEdit.getText(), massEdit.getValue(), priceEdit.getValue()));
             calculate.setDisable(false);
@@ -98,21 +98,32 @@ public class AddItemsController {
         }
     }
 
-    public void calculate(MouseEvent mouseEvent) {
+    public void calculate() {
         if (!validValue(bpSize.getEditor().getText()))
             bpSize.getStyleClass().add("error");
         else {
+            BackpackFilling task = new BackpackFilling();
+            new Thread(task).start();
+            //After the completion of the task, start fadeOut animation
+            task.setOnSucceeded(successEvent -> {
+                System.out.println("suckass");
+            });
+
             size = bpSize.getValue();
             Main.background.getChildren().set(1, Main.loading);
-            removeUseless(AddItemsController.getItemList());
-            if (StartController.isGreed())
-                result = greed(itemList);
-            result = fillTheBackpack(result, itemList);
-
+            removeUseless(itemList);
+            if (StartController.isGreed() && itemList.size() > 0)
+                resultItems.clone(greed(itemList));
+            resultItems.clone(fillTheBackpack(resultItems, itemList));
+            for (Item item : resultItems.getMap().keySet()) {
+                item.setAmount(resultItems.getMap().get(item));
+                result.add(item);
+            }
+            Main.background.getChildren().set(1, Main.end);
         }
     }
 
-    public void removeItem(MouseEvent mouseEvent) {
+    public void removeItem() {
         itemTable.getItems().removeAll(itemTable.getSelectionModel().getSelectedItems());
         if (itemList.size() == 0) calculate.setDisable(true);
     }
@@ -122,7 +133,7 @@ public class AddItemsController {
         outsideLoop:
         for (int n = itemList.size() - 1; n >= 0; n--) {
             int firstMass = itemList.get(n).getMass();
-            if (firstMass > AddItemsController.getSize() || itemList.get(n).getPrice() <= 0) {
+            if (firstMass > size || itemList.get(n).getPrice() <= 0) {
                 itemList.remove(n);
                 continue;
             }
@@ -137,7 +148,7 @@ public class AddItemsController {
 
     protected static Items greed(ObservableList<Item> itemList) {
         int min = Integer.MAX_VALUE;
-        Item topItem = new Item("blank",1, 1);
+        Item topItem = itemList.get(0);
         for (Item item : itemList)
             if (item.getGreed() >= topItem.getGreed())
                 topItem = item;
@@ -178,11 +189,18 @@ public class AddItemsController {
         }
     }
 
-    public static ObservableList<Item> getItemList() {
-        return itemList;
+    public static void reset() {
+        resultItems.clone(new Items());
+        result.clear();
+        itemList.clear();
+        Main.background.getChildren().set(1, Main.start);
     }
 
-    public static int getSize() {
-        return size;
+    public static ObservableList<Item> getResult() {
+        return result;
+    }
+
+    public static Items getResultItems() {
+        return resultItems;
     }
 }

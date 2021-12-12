@@ -5,6 +5,7 @@ import javafx.beans.property.*;
 public class Item implements Comparable<Item> {
     private final StringProperty name;
     private final IntegerProperty mass, price;
+    private IntegerProperty amount;
     private final double greed;
     private static int counter = 1;
 
@@ -21,9 +22,10 @@ public class Item implements Comparable<Item> {
         return Integer.compare(mass.get(), item.getMass());
     }
 
-    public String getName() {
-        return name.get();
+    public void setAmount(int n) {
+        amount = new SimpleIntegerProperty(n);
     }
+
     public StringProperty nameProperty() {
         return name;
     }
@@ -40,4 +42,5 @@ public class Item implements Comparable<Item> {
     public double getGreed() {
         return greed;
     }
+    public IntegerProperty amountProperty() { return amount; }
 }

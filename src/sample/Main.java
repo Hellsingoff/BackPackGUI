@@ -6,13 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class Main extends Application {
     static AnchorPane background, start, items, loading, end;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
         background = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("BG.fxml")));
         start = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Start.fxml")));
         items = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AddItems.fxml")));
@@ -21,8 +22,8 @@ public class Main extends Application {
         primaryStage.setTitle("BackPack!");
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(background, 800, 480));
-        primaryStage.show();
         background.getChildren().add(start);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

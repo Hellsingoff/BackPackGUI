@@ -4,7 +4,7 @@
     -fx-focus-color: #3f51b5;
     -fx-faint-focus-color: #3f51b5;
     -fx-background-radius: 25;
-    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
+    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.25, 2.0, 2.0);
     -fx-cursor: hand;
     -fx-padding : 0 0 0 0;
 }
@@ -23,7 +23,7 @@
     -fx-background-color: #eee;
     -fx-focus-color: #eee;
     -fx-faint-focus-color: #eee;
-    -fx-effect: innerShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, -3.0, -3.0, 3.0);
+    -fx-effect: innerShadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.25, -3.0, -3.0, 3.0);
     -fx-rotate: 180;
 }
 
@@ -32,12 +32,12 @@
 }
 
 #btnBack:pressed {
-    -fx-effect: innerShadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, -5.0, -5.0, 5.0);
+    -fx-effect: innerShadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, -5.0, -5.0, 5.0);
 }
 
 #size {
     -fx-fill: #3f51b5;
-    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.25, 3.0, 3.0);
+    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.25, 3.0, 3.0);
 }
 
 .table-view {
@@ -93,11 +93,9 @@
 
 .spinner:focused,
 .text-field:focused {
-    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.25, 2.0, 2.0);
+    -fx-effect: dropShadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.25, 2.0, 2.0);
     -fx-border-color: #3f51b5;
 }
-
-
 
 .spinner .increment-arrow-button,
 .spinner .decrement-arrow-button {
@@ -123,20 +121,24 @@
 }
 
 .error .text-field {
-    -fx-background-color: rgba(255, 0, 0, 0.5);
+    -fx-background-color: rgba(255, 0, 0, 0.25);
 }
 
 .check-box .box {
--fx-cursor: hand;
--fx-background-color:white;
--fx-border-color:grey;
--fx-border-radius:3px;
+    -fx-cursor: hand;
+    -fx-background-color:white;
+    -fx-border-color:grey;
+    -fx-border-radius:3px;
 }
 
 .check-box:selected .mark {
--fx-background-color: white;
+    -fx-background-color: white;
 }
 
 .check-box:selected .box {
--fx-background-color: #3f51b5;
+    -fx-background-color: #3f51b5;
+}
+
+#arrows {
+    -fx-text-fill: #3f51b5;
 }

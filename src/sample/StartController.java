@@ -2,7 +2,6 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
-import javafx.scene.input.MouseEvent;
 
 import java.awt.*;
 import java.io.IOException;
@@ -29,7 +28,7 @@ public class StartController {
                 + "_%D1%80%D1%8E%D0%BA%D0%B7%D0%B0%D0%BA%D0%B5"));
     }
 
-    public void toItems(MouseEvent mouseEvent) {
+    public void toItems() {
         greed = checkGreed.isSelected();
         Main.background.getChildren().set(1, Main.items);
     }
